@@ -6,12 +6,16 @@ let log = console.log;
 
 //clicking on span element this log of div will print.
 d.addEventListener('click', (ev) => {
+    //This stop propagation and any event on div.
+    ev.stopImmediatePropagation();
         log('HI')
     }
 );
 
 let highlight = (ev)=>{
   //add css class "gold" to element that triggered
+  //this stops propagations
+    ev.stopPropagation();
   let target = ev.currentTarget;
   target.className = 'gold';
   reset(target);
